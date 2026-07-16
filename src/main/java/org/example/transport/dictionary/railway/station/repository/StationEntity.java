@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 import java.time.Instant;
 
 @Entity
-@Table(name = "stations")
+@Table(name = "railway_stations")
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class StationEntity {
