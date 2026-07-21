@@ -1,15 +1,15 @@
 name: CI
 
 on:
-    push:
-        branches:
-        - '*'
-        - main
-    pull_request:
-        branches:
-        - main
+  push:
+    branches:
+      - '**'
+  pull_request:
+    branches:
+      - master
+
 permissions:
-    contents: read
+  contents: read
 
 jobs:
   build:
@@ -20,16 +20,17 @@ jobs:
       postgres:
         image: postgres:17-alpine
         env:
-            POSTGRES_DB: transport_test
-            POSTGRES_USER: transport
-            POSTGRES_PASSWORD: transport_test
+          POSTGRES_DB: transport_test
+          POSTGRES_USER: transport
+          POSTGRES_PASSWORD: transport_test
         ports:
           - 5432:5432
         options: >-
-            --health-cmd pg_isready
-            --health-interval 10s
-            --health-timeout 5s
-            --health-retries 5
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
     env:
       SPRING_DATASOURCE_URL: jdbc:postgresql://localhost:5432/transport_test
       SPRING_DATASOURCE_USERNAME: transport
@@ -51,4 +52,39 @@ jobs:
         run: chmod +x mvnw
 
       - name: Build and run tests
-        run: ./mvnw clean verify
+        run: ./mvnw --batch-mode clean verify
+
+      - name: Add coverage summary
+        shell: bash
+        run: |
+          {
+            echo "## JaCoCo test coverage"
+            echo
+            awk -F, '
+              NR > 1 {
+                line_missed += $8
+                line_covered += $9
+                branch_missed += $6
+                branch_covered += $7
+              }
+              END {
+                line_total = line_missed + line_covered
+                branch_total = branch_missed + branch_covered
+                line_percent = line_total ? 100 * line_covered / line_total : 0
+                branch_percent = branch_total ? 100 * branch_covered / branch_total : 0
+
+                print "| Metric | Covered | Total | Coverage |"
+                print "|---|---:|---:|---:|"
+                printf "| Lines | %d | %d | %.2f%% |\n", line_covered, line_total, line_percent
+                printf "| Branches | %d | %d | %.2f%% |\n", branch_covered, branch_total, branch_percent
+              }
+            ' target/site/jacoco/jacoco.csv
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload JaCoCo HTML report
+        uses: actions/upload-artifact@v6
+        with:
+          name: jacoco-report
+          path: target/site/jacoco
+          if-no-files-found: error
+          retention-days: 14
