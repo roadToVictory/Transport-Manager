@@ -1,6 +1,5 @@
 package org.example.transport.dictionary.railway.station.service;
 
-import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.example.transport.integration.pkp.station.PkpStationClient;
@@ -8,6 +7,7 @@ import org.example.transport.integration.pkp.station.dto.PkpStationsResponse;
 import org.example.transport.dictionary.railway.station.repository.StationEntity;
 import org.example.transport.dictionary.railway.station.repository.StationRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Map;

@@ -1,6 +1,5 @@
 package org.example.transport.dictionary.railway.carrier.service;
 
-import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.example.transport.dictionary.railway.carrier.repository.CarrierEntity;
@@ -8,6 +7,7 @@ import org.example.transport.dictionary.railway.carrier.repository.CarrierReposi
 import org.example.transport.integration.pkp.carrier.PkpCarrierClient;
 import org.example.transport.integration.pkp.carrier.PkpCarriersResponse;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.util.List;
