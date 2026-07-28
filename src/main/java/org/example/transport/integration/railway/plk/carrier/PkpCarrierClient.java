@@ -1,4 +1,4 @@
-package org.example.transport.integration.pkp.carrier;
+package org.example.transport.integration.railway.plk.carrier;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

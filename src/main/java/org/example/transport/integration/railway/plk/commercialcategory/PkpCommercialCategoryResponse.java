@@ -1,4 +1,4 @@
-package org.example.transport.integration.pkp.commercialcategory;
+package org.example.transport.integration.railway.plk.commercialcategory;
 
 import java.time.Instant;
 import java.util.List;

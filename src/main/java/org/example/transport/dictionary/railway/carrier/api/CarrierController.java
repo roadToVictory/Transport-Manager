@@ -3,7 +3,7 @@ package org.example.transport.dictionary.railway.carrier.api;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.example.transport.dictionary.railway.carrier.service.CarrierService;
-import org.example.transport.integration.pkp.carrier.PkpCarriersResponse;
+import org.example.transport.integration.railway.plk.carrier.PkpCarriersResponse;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;

@@ -1,4 +1,4 @@
-package org.example.transport.integration.pkp.carrier;
+package org.example.transport.integration.railway.plk.carrier;
 
 import java.time.Instant;
 import java.time.LocalDateTime;

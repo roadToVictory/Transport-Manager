@@ -4,8 +4,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.example.transport.dictionary.railway.carrier.repository.CarrierEntity;
 import org.example.transport.dictionary.railway.carrier.repository.CarrierRepository;
-import org.example.transport.integration.pkp.carrier.PkpCarrierClient;
-import org.example.transport.integration.pkp.carrier.PkpCarriersResponse;
+import org.example.transport.integration.railway.plk.carrier.PkpCarrierClient;
+import org.example.transport.integration.railway.plk.carrier.PkpCarriersResponse;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
