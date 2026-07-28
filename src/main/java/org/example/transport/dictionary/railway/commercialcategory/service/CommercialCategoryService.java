@@ -4,8 +4,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.example.transport.dictionary.railway.commercialcategory.repository.CommercialCategoryEntity;
 import org.example.transport.dictionary.railway.commercialcategory.repository.CommercialCategoryRepository;
-import org.example.transport.integration.pkp.commercialcategory.PkpCommercialCategoryClient;
-import org.example.transport.integration.pkp.commercialcategory.PkpCommercialCategoryResponse;
+import org.example.transport.integration.railway.plk.commercialcategory.PkpCommercialCategoryClient;
+import org.example.transport.integration.railway.plk.commercialcategory.PkpCommercialCategoryResponse;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

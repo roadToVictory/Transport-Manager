@@ -3,7 +3,7 @@ package org.example.transport.dictionary.railway.commercialcategory.api;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.example.transport.dictionary.railway.commercialcategory.service.CommercialCategoryService;
-import org.example.transport.integration.pkp.commercialcategory.PkpCommercialCategoryResponse;
+import org.example.transport.integration.railway.plk.commercialcategory.PkpCommercialCategoryResponse;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;

@@ -1,4 +1,4 @@
-package org.example.transport.integration.pkp.station.dto;
+package org.example.transport.integration.railway.plk.station.dto;
 
 import java.time.Instant;
 import java.util.List;

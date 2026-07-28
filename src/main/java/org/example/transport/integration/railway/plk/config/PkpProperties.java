@@ -1,4 +1,4 @@
-package org.example.transport.integration.pkp.config;
+package org.example.transport.integration.railway.plk.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 

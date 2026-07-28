@@ -1,4 +1,4 @@
-package org.example.transport.integration.pkp.commercialcategory;
+package org.example.transport.integration.railway.plk.commercialcategory;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

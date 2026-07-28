@@ -1,8 +1,8 @@
-package org.example.transport.integration.pkp.station;
+package org.example.transport.integration.railway.plk.station;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.example.transport.integration.pkp.station.dto.PkpStationsResponse;
+import org.example.transport.integration.railway.plk.station.dto.PkpStationsResponse;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestClient;
 
