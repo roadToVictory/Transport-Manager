@@ -10,6 +10,8 @@ public interface StationRepository extends JpaRepository<StationEntity, Long> {
     List<StationEntity> findAllByPkpIdIn(Collection<Long> pkpIds);
     StationEntity findByName(String name);
     StationEntity findByPkpId(Long pkpId);
+    List<StationEntity> findAllByActiveTrueOrderByNameAsc();
+    List<StationEntity> findAllByIdInAndActiveTrue(Collection<Long> ids);
 
     @Query("SELECT station.pkpId FROM StationEntity station")
     List<Long> findAllPkpIds();
